@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.DashboardControllerFXML" spacing="24">
+   <padding><Insets bottom="24" left="28" right="28" top="24"/></padding>
+   <Label text="%dashboard.title" styleClass="dashboard-page-title"/>
+   <Label text="%dashboard.sectionUsers" styleClass="dashboard-section-label"/>
+   <GridPane hgap="12" vgap="12" styleClass="dashboard-grid">
+      <columnConstraints>
+         <ColumnConstraints percentWidth="20"/>
+         <ColumnConstraints percentWidth="20"/>
+         <ColumnConstraints percentWidth="20"/>
+         <ColumnConstraints percentWidth="20"/>
+         <ColumnConstraints percentWidth="20"/>
+      </columnConstraints>
+      <VBox styleClass="dashboard-card dashboard-card-users" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.totalUsers" styleClass="dashboard-label"/>
+         <Label fx:id="totalUsersLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-users" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.clients" styleClass="dashboard-label"/>
+         <Label fx:id="clientsLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-users" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.admins" styleClass="dashboard-label"/>
+         <Label fx:id="adminsLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-users" alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.newThisMonth" styleClass="dashboard-label"/>
+         <Label fx:id="newThisMonthLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-users" alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.activeToday" styleClass="dashboard-label"/>
+         <Label fx:id="activeTodayLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+   </GridPane>
+   <Label text="%dashboard.sectionEcommerce" styleClass="dashboard-section-label"/>
+   <GridPane hgap="12" vgap="12" styleClass="dashboard-grid">
+      <columnConstraints>
+         <ColumnConstraints percentWidth="25"/>
+         <ColumnConstraints percentWidth="25"/>
+         <ColumnConstraints percentWidth="25"/>
+         <ColumnConstraints percentWidth="25"/>
+      </columnConstraints>
+      <VBox styleClass="dashboard-card dashboard-card-orders" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.totalOrders" styleClass="dashboard-label"/>
+         <Label fx:id="totalOrdersLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-pending" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.pendingOrders" styleClass="dashboard-label"/>
+         <Label fx:id="pendingOrdersLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-products" alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.totalProducts" styleClass="dashboard-label"/>
+         <Label fx:id="totalProductsLabel" text="0" styleClass="dashboard-value"/>
+      </VBox>
+      <VBox styleClass="dashboard-card dashboard-card-revenue" alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS">
+         <Label text="%dashboard.totalRevenue" styleClass="dashboard-label"/>
+         <Label fx:id="totalRevenueLabel" text="0,00" styleClass="dashboard-value"/>
+      </VBox>
+   </GridPane>
+   <Region VBox.vgrow="ALWAYS"/>
+</VBox>

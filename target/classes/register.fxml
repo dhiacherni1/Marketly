@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="20" styleClass="register-page" stylesheets="@styles.css" fx:controller="Application.RegisterController">
+   <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+   <Label text="%register.title" styleClass="login-title"/>
+   <Label fx:id="errorLabel" text="" wrapText="true" maxWidth="320" styleClass="login-error"/>
+   <VBox styleClass="form-container login-form-container" spacing="14" alignment="CENTER">
+      <GridPane hgap="18" vgap="14">
+         <columnConstraints>
+            <ColumnConstraints minWidth="140" prefWidth="140"/>
+            <ColumnConstraints minWidth="260" prefWidth="260"/>
+         </columnConstraints>
+         <Label text="%register.username" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+         <TextField fx:id="usernameField" styleClass="text-input" promptText="%register.usernamePrompt" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+         <Label text="%register.password" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+         <PasswordField fx:id="passwordField" styleClass="text-input" promptText="%register.passwordPrompt" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+         <Label text="%register.confirmPassword" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+         <PasswordField fx:id="confirmPasswordField" styleClass="text-input" promptText="%register.confirmPrompt" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      </GridPane>
+      <HBox spacing="12" alignment="CENTER">
+         <Button fx:id="registerButton" onAction="#handleRegister" text="%register.button" styleClass="btn-success"/>
+      </HBox>
+      <Hyperlink fx:id="loginLink" onAction="#handleGoToLogin" text="%register.loginLink" styleClass="login-link"/>
+   </VBox>
+</VBox>

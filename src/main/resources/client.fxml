@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.ClientController">
+   <top>
+      <HBox styleClass="app-bar" alignment="CENTER_RIGHT" spacing="14">
+         <Region HBox.hgrow="ALWAYS"/>
+         <Label text="%label.language"/>
+         <ComboBox fx:id="languageCombo" prefWidth="170" onAction="#handleLanguageChange"/>
+         <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="btn-icon">
+            <tooltip><Tooltip text="%logout.button"/></tooltip>
+            <text>🚪</text>
+         </Button>
+      </HBox>
+   </top>
+   <center>
+      <TabPane fx:id="clientTabPane" styleClass="main-tabs">
+         <tabs>
+            <Tab text="%tab.categories"><content><fx:include source="category_client.fxml"/></content></Tab>
+            <Tab text="%tab.subcategories"><content><fx:include source="subcategory_client.fxml"/></content></Tab>
+            <Tab text="%tab.products"><content><fx:include source="product_client.fxml"/></content></Tab>
+            <Tab fx:id="cartTab" text="%tab.cart"><content><fx:include fx:id="panierInclude" source="panier_client.fxml"/></content></Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

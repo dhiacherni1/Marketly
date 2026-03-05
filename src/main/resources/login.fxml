@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="16" styleClass="login-page" fx:controller="Application.LoginController">
+   <padding><Insets top="32" right="40" bottom="32" left="40"/></padding>
+   <ImageView fx:id="logoView" fitWidth="140" fitHeight="140" preserveRatio="true" pickOnBounds="true"/>
+   <Label text="%login.title" styleClass="login-title"/>
+   <Label text="%login.subtitle" styleClass="login-subtitle"/>
+   <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 0 0 8 0;">
+      <Label text="%label.language" styleClass="login-label"/>
+      <ComboBox fx:id="languageCombo" prefWidth="160" styleClass="login-combo" onAction="#handleLanguageChange"/>
+   </HBox>
+   <Label fx:id="errorLabel" text="" wrapText="true" maxWidth="320" styleClass="login-error"/>
+   <VBox styleClass="login-form-container" spacing="14" alignment="CENTER">
+      <GridPane hgap="15" vgap="12">
+         <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="120"/>
+            <ColumnConstraints minWidth="220" prefWidth="250"/>
+         </columnConstraints>
+         <Label text="%login.username" styleClass="login-field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+         <TextField fx:id="usernameField" styleClass="login-input" promptText="%login.usernamePrompt" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+         <Label text="%login.password" styleClass="login-field-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+         <PasswordField fx:id="passwordField" styleClass="login-input" promptText="%login.passwordPrompt" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      </GridPane>
+      <Button fx:id="loginButton" onAction="#handleLogin" text="%login.button" styleClass="login-btn"/>
+      <Hyperlink fx:id="registerLink" onAction="#handleGoToRegister" text="%login.registerLink" styleClass="login-link"/>
+   </VBox>
+</VBox>

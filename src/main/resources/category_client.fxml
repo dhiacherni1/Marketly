@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.CategoryControllerClient">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <Label text="%category.title" styleClass="form-title"/>
+   <Label text="%category.subtitle" styleClass="info-label"/>
+   <TableView fx:id="tableView" styleClass="table-view" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="idCol" prefWidth="80" text="%category.col.id"/>
+         <TableColumn fx:id="nameCol" prefWidth="200" text="%category.col.name"/>
+         <TableColumn fx:id="descCol" prefWidth="400" text="%category.col.description"/>
+      </columns>
+   </TableView>
+   <Label fx:id="messageLabel" text=""/>
+</VBox>

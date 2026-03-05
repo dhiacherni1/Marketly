@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.CustomerControllerFXML">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <Label text="%admin.customer.title" styleClass="form-title"/>
+   <VBox styleClass="form-container" spacing="16">
+      <GridPane hgap="18" vgap="14">
+         <columnConstraints><ColumnConstraints minWidth="120" prefWidth="120"/><ColumnConstraints minWidth="250" prefWidth="300"/></columnConstraints>
+         <Label text="%common.id" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+         <TextField fx:id="idField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+         <Label text="%admin.customer.firstname" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+         <TextField fx:id="prenomField" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+         <Label text="%admin.customer.lastname" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+         <TextField fx:id="nomField" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+         <Label text="%admin.customer.email" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+         <TextField fx:id="emailField" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+      </GridPane>
+      <HBox styleClass="form-actions" spacing="12">
+         <Button fx:id="addButton" onAction="#handleAdd" text="%common.add" styleClass="btn-success"/>
+         <Button fx:id="updateButton" onAction="#handleUpdate" text="%common.update" styleClass="btn-warning"/>
+         <Button fx:id="deleteButton" onAction="#handleDelete" text="%common.delete" styleClass="btn-danger"/>
+         <Button fx:id="refreshButton" onAction="#handleRefresh" text="%common.refresh" styleClass="btn-secondary"/>
+      </HBox>
+      <Label fx:id="messageLabel" text=""/>
+   </VBox>
+   <TableView fx:id="tableView" styleClass="table-view" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="idCol" prefWidth="80" text="%common.id"/>
+         <TableColumn fx:id="prenomCol" prefWidth="150" text="%admin.customer.firstname"/>
+         <TableColumn fx:id="nomCol" prefWidth="150" text="%admin.customer.lastname"/>
+         <TableColumn fx:id="emailCol" prefWidth="250" text="%admin.customer.email"/>
+      </columns>
+   </TableView>
+</VBox>

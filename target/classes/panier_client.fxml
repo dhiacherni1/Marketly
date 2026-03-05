@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.PanierControllerClient">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <Label text="%cart.title" styleClass="form-title"/>
+   <Label text="%cart.subtitle" styleClass="info-label"/>
+   <TableView fx:id="tableView" styleClass="table-view" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="productCol" prefWidth="280" text="%product.col.name"/>
+         <TableColumn fx:id="quantityCol" prefWidth="120" text="%cart.quantity"/>
+         <TableColumn fx:id="priceCol" prefWidth="120" text="%product.col.price"/>
+      </columns>
+   </TableView>
+   <HBox spacing="12" alignment="CENTER_LEFT" styleClass="form-actions">
+      <Label text="%cart.quantity" styleClass="field-label"/>
+      <TextField fx:id="editQuantityField" styleClass="text-input" prefWidth="90" promptText="1"/>
+      <Button text="%cart.update" onAction="#handleUpdateQuantity" styleClass="btn-secondary"/>
+      <Region HBox.hgrow="ALWAYS"/>
+      <Label text="%cart.totalLabel"/>
+      <Label fx:id="totalLabel"/>
+      <Button text="%cart.checkout" onAction="#handleCheckout" styleClass="btn-primary"/>
+      <Button text="%cart.remove" onAction="#handleRemove" styleClass="btn-danger"/>
+   </HBox>
+   <Label fx:id="messageLabel" text=""/>
+</VBox>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.OrderControllerFXML">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <Label text="%admin.order.title" styleClass="form-title"/>
+   <HBox spacing="12" alignment="CENTER_LEFT" styleClass="form-actions">
+      <Button fx:id="acceptButton" onAction="#handleAcceptOrder" text="%admin.order.accept" styleClass="btn-success"/>
+      <Button fx:id="refreshButton" onAction="#handleRefresh" text="%common.refresh" styleClass="btn-secondary"/>
+   </HBox>
+   <Label fx:id="messageLabel" text=""/>
+   <TableView fx:id="tableView" styleClass="table-view" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="idCol" prefWidth="80" text="%common.id"/>
+         <TableColumn fx:id="customerCol" prefWidth="200" text="%admin.order.customer"/>
+         <TableColumn fx:id="totalCol" prefWidth="100" text="%admin.order.total"/>
+         <TableColumn fx:id="dateCol" prefWidth="180" text="%admin.order.date"/>
+         <TableColumn fx:id="statusCol" prefWidth="120" text="%admin.order.status"/>
+      </columns>
+   </TableView>
+</VBox>

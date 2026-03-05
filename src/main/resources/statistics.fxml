@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.StatisticsControllerFXML">
+   <padding><Insets bottom="24" left="28" right="28" top="24"/></padding>
+   <Label text="%admin.stats.title" styleClass="stats-page-title"/>
+   <HBox spacing="12">
+      <Label text="%admin.stats.year" styleClass="field-label"/>
+      <ComboBox fx:id="yearCombo" prefWidth="110"/>
+      <Label text="%admin.stats.top" styleClass="field-label"/>
+      <ComboBox fx:id="limitCombo" prefWidth="90"/>
+      <Button text="%admin.stats.refresh" onAction="#handleRefreshAll" styleClass="btn-primary"/>
+      <Region HBox.hgrow="ALWAYS"/>
+      <VBox styleClass="stats-summary-card">
+         <Label text="%admin.stats.totalRevenue" styleClass="stats-summary-label"/>
+         <Label fx:id="totalRevenueLabel" styleClass="stats-summary-value"/>
+      </VBox>
+   </HBox>
+   <SplitPane dividerPositions="0.5" styleClass="stats-split">
+      <items>
+         <VBox spacing="12" styleClass="stats-panel">
+            <Label text="%admin.stats.topProducts" styleClass="stats-panel-title"/>
+            <TableView fx:id="topProductsTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+               <columns>
+                  <TableColumn fx:id="prodNameCol" text="%admin.stats.product" prefWidth="200"/>
+                  <TableColumn fx:id="prodQtyCol" text="%admin.stats.quantitySold" prefWidth="140"/>
+                  <TableColumn fx:id="prodRevenueCol" text="%admin.stats.revenueGenerated" prefWidth="140"/>
+               </columns>
+            </TableView>
+            <BarChart fx:id="productBarChart" prefHeight="220" legendVisible="false" styleClass="stats-chart">
+               <xAxis><CategoryAxis label="%admin.stats.product"/></xAxis>
+               <yAxis><NumberAxis label="%admin.stats.quantitySold"/></yAxis>
+            </BarChart>
+         </VBox>
+         <VBox spacing="12" styleClass="stats-panel">
+            <Label text="%admin.stats.topCustomers" styleClass="stats-panel-title"/>
+            <TableView fx:id="topCustomersTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+               <columns>
+                  <TableColumn fx:id="custNameCol" text="%admin.stats.customer" prefWidth="220"/>
+                  <TableColumn fx:id="custOrdersCol" text="%admin.stats.purchaseCount" prefWidth="140"/>
+                  <TableColumn fx:id="custSpentCol" text="%admin.stats.amountSpent" prefWidth="160"/>
+               </columns>
+            </TableView>
+            <BarChart fx:id="customerBarChart" prefHeight="220" legendVisible="false" styleClass="stats-chart">
+               <xAxis><CategoryAxis label="%admin.stats.customer"/></xAxis>
+               <yAxis><NumberAxis label="%admin.stats.amountSpent"/></yAxis>
+            </BarChart>
+         </VBox>
+      </items>
+   </SplitPane>
+   <VBox spacing="12" styleClass="stats-panel">
+      <Label text="%admin.stats.revenueByMonth" styleClass="stats-panel-title"/>
+      <TableView fx:id="revenueByMonthTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+         <columns>
+            <TableColumn fx:id="periodCol" text="%admin.stats.period" prefWidth="150"/>
+            <TableColumn fx:id="revenueCol" text="%admin.stats.revenue" prefWidth="150"/>
+         </columns>
+      </TableView>
+      <LineChart fx:id="revenueLineChart" legendVisible="false" createSymbols="true" prefHeight="260" styleClass="stats-chart">
+         <xAxis><CategoryAxis label="Mois"/></xAxis>
+         <yAxis><NumberAxis label="Revenu (DT)"/></yAxis>
+      </LineChart>
+   </VBox>
+</VBox>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.SubCategoryControllerClient">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <Label text="%subcategory.title" styleClass="form-title"/>
+   <Label text="%subcategory.subtitle" styleClass="info-label"/>
+   <HBox spacing="20" HBox.hgrow="ALWAYS">
+      <TableView fx:id="tableView" styleClass="table-view" HBox.hgrow="ALWAYS" prefWidth="400">
+      <columns>
+         <TableColumn fx:id="idCol" prefWidth="80" text="%subcategory.col.id"/>
+         <TableColumn fx:id="nameCol" prefWidth="250" text="%subcategory.col.name"/>
+         <TableColumn fx:id="categoryCol" prefWidth="200" text="%subcategory.col.category"/>
+      </columns>
+   </TableView>
+      <VBox spacing="8" alignment="CENTER_LEFT" styleClass="form-container">
+         <Label text="%subcategory.bannerLabel" styleClass="field-label"/>
+         <ImageView fx:id="bannerImageView" fitWidth="280" fitHeight="160" preserveRatio="true" pickOnBounds="true"/>
+      </VBox>
+   </HBox>
+   <Label fx:id="messageLabel" text=""/>
+</VBox>

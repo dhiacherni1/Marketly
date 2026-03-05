@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.ProductControllerClient">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <Label text="%product.title" styleClass="form-title"/>
+   <Label text="%product.subtitle" styleClass="info-label"/>
+   <HBox spacing="20" VBox.vgrow="ALWAYS">
+      <VBox spacing="14" HBox.hgrow="ALWAYS">
+         <TableView fx:id="tableView" styleClass="table-view" VBox.vgrow="ALWAYS">
+            <columns>
+               <TableColumn fx:id="idCol" prefWidth="80" text="%product.col.id"/>
+               <TableColumn fx:id="nameCol" prefWidth="250" text="%product.col.name"/>
+               <TableColumn fx:id="categoryCol" prefWidth="170" text="%product.col.category"/>
+               <TableColumn fx:id="subCategoryCol" prefWidth="170" text="%product.col.subcategory"/>
+               <TableColumn fx:id="priceCol" prefWidth="120" text="%product.col.price"/>
+               <TableColumn fx:id="quantityCol" prefWidth="120" text="%product.col.quantity"/>
+            </columns>
+         </TableView>
+         <HBox spacing="12" alignment="CENTER_LEFT" styleClass="form-actions">
+            <Label text="%cart.quantity" styleClass="field-label"/>
+            <TextField fx:id="quantityField" styleClass="text-input" prefWidth="90" promptText="1"/>
+            <Button text="%cart.add" onAction="#handleAddToCart" styleClass="btn-primary"/>
+         </HBox>
+         <Label fx:id="messageLabel" text=""/>
+      </VBox>
+      <VBox spacing="8" prefWidth="320">
+         <Label text="%chat.title" styleClass="form-title"/>
+         <ScrollPane fx:id="chatScroll" fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER">
+            <content><VBox fx:id="chatMessages" spacing="8" prefWidth="0"/></content>
+         </ScrollPane>
+         <HBox spacing="10">
+            <TextField fx:id="chatInput" promptText="%chat.prompt" HBox.hgrow="ALWAYS"/>
+            <Button text="%chat.send" onAction="#handleSendMessage"/>
+         </HBox>
+      </VBox>
+   </HBox>
+</VBox>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.MainControllerFXML">
+   <top>
+      <HBox fx:id="topBar" styleClass="app-bar" spacing="14" alignment="CENTER_RIGHT">
+         <Region HBox.hgrow="ALWAYS"/>
+         <Label text="%label.language"/>
+         <ComboBox fx:id="languageCombo" prefWidth="170" onAction="#handleLanguageChange"/>
+         <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="btn-icon">
+            <text>🚪</text>
+            <tooltip><Tooltip text="%admin.logout"/></tooltip>
+         </Button>
+      </HBox>
+   </top>
+   <center>
+      <TabPane styleClass="main-tabs">
+         <tabs>
+            <Tab text="%admin.tab.dashboard"><content><fx:include source="dashboard.fxml"/></content></Tab>
+            <Tab text="%admin.tab.categories"><content><fx:include source="category.fxml"/></content></Tab>
+            <Tab text="%admin.tab.orders"><content><fx:include source="order.fxml"/></content></Tab>
+            <Tab text="%admin.tab.customers"><content><fx:include source="customer.fxml"/></content></Tab>
+            <Tab text="%admin.tab.products"><content><fx:include source="product.fxml"/></content></Tab>
+            <Tab text="%admin.tab.providers"><content><fx:include source="provider.fxml"/></content></Tab>
+            <Tab text="%admin.tab.subcategories"><content><fx:include source="subcategory.fxml"/></content></Tab>
+            <Tab text="%admin.tab.users"><content><fx:include source="user.fxml"/></content></Tab>
+            <Tab text="%admin.tab.statistics"><content><fx:include source="statistics.fxml"/></content></Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

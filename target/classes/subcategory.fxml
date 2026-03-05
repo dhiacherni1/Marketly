@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox spacing="20" styleClass="tab-content" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@styles.css" fx:controller="Application.SubCategoryControllerFXML">
+   <padding><Insets bottom="20" left="24" right="24" top="20"/></padding>
+   <VBox styleClass="banner-container" spacing="5">
+      <Label text="%admin.subcategory.bannerLabel" styleClass="field-label"/>
+      <StackPane styleClass="banner-pane" maxHeight="180" minHeight="120" prefHeight="160">
+         <ImageView fx:id="bannerImageView" fitHeight="160" fitWidth="800" preserveRatio="true" pickOnBounds="true"/>
+      </StackPane>
+      <HBox spacing="10" alignment="CENTER_LEFT">
+         <Button fx:id="uploadImageButton" onAction="#handleUploadImage" text="%admin.subcategory.uploadImage" styleClass="btn-primary"/>
+      </HBox>
+   </VBox>
+   <Label text="%admin.subcategory.title" styleClass="form-title"/>
+   <VBox styleClass="form-container" spacing="16">
+      <GridPane hgap="18" vgap="14">
+         <columnConstraints><ColumnConstraints minWidth="120" prefWidth="120"/><ColumnConstraints minWidth="250" prefWidth="300"/></columnConstraints>
+         <Label text="%common.id" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+         <TextField fx:id="idField" editable="false" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+         <Label text="%common.name" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+         <TextField fx:id="nameField" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+         <Label text="%admin.subcategory.category" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+         <ComboBox fx:id="categoryCombo" styleClass="combo-box" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      </GridPane>
+      <HBox styleClass="form-actions" spacing="12">
+         <Button fx:id="addButton" onAction="#handleAdd" text="%common.add" styleClass="btn-success"/>
+         <Button fx:id="updateButton" onAction="#handleUpdate" text="%common.update" styleClass="btn-warning"/>
+         <Button fx:id="deleteButton" onAction="#handleDelete" text="%common.delete" styleClass="btn-danger"/>
+         <Button fx:id="refreshButton" onAction="#handleRefresh" text="%common.refresh" styleClass="btn-secondary"/>
+      </HBox>
+      <Label fx:id="messageLabel" text=""/>
+   </VBox>
+   <TableView fx:id="tableView" styleClass="table-view" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="idCol" prefWidth="80" text="%common.id"/>
+         <TableColumn fx:id="nameCol" prefWidth="250" text="%common.name"/>
+         <TableColumn fx:id="categoryCol" prefWidth="200" text="%admin.subcategory.category"/>
+      </columns>
+   </TableView>
+</VBox>
